@@ -74,7 +74,7 @@ session_start(); // Start the session to check login status
     </div>
 
     <div class="image-section">
-        <img src="image.gif" alt="Photobooth GIF">
+    <img src="images/eventcoverage1.png" alt="Events Coverage">
     </div>
   </div>
 

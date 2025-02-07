@@ -43,15 +43,14 @@ if (!isset($_SESSION['user_id'])) {
           <li><a href="contact.php">Contact Us</a></li>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()">
     </div>
   </div>
 
   <!-- Booking Form -->
   <div class="booking-form-container">
-    <h2>Booking Form</h2>
-    <p>Book your professional photoshoot today!</p>
-
+   
+  <div class="booking-inner-container">
     <?php
     if (isset($_GET['error'])) {
         echo '<p style="color: red;">Error: This date is already booked. Please select another date.</p>';
@@ -60,6 +59,9 @@ if (!isset($_SESSION['user_id'])) {
 
     <form id="bookingForm" action="submit_booking.php" method="POST"> <br>
 
+    <h2>Booking Form</h2>
+    <p>Book your professional photoshoot today!</p>
+    <br>
     <h3>Personal Information</h3>
       <label for="first_name">First Name</label>
       <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required>
@@ -127,6 +129,46 @@ if (!isset($_SESSION['user_id'])) {
       <button type="submit">Confirm Booking</button>
     </form>
   </div>
+  </div>
+
+  <!---------- Footer --------------->
+  <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>DEVELOPERS</h3>
+            <p>Arceta, Emmanuel <br> Perlas, John Rovick <br> Bedaño, Vanessa Anne <br> Ramos, John Patrick</p>
+            <div class="app-logo">
+            </div>
+          </div>
+          <div class="footer-col-2">
+          </div>
+          <div class="footer-col-3">
+          </div>
+          <div class="footer-col-3">
+          </div>
+        </div>
+        <hr>
+        <p class="copyright">WEB AND MOBILE SYSTEMS</p>
+      </div>
+    </div>
+
+ <!-- BURGER NAV RESPONSIVENESS -->
+ <script>
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
+
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
+    }
+  });
+</script>
 
 </body>
 </html>

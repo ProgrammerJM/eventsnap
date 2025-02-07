@@ -51,7 +51,7 @@ session_start();
           <?php } ?>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()">
     </div>
   </div>
 
@@ -59,7 +59,7 @@ session_start();
     <!-- CORPORATE -->
     <div class="packages-container">
         <div class="image-section">
-            <img src="image.gif" alt="Corporate Event GIF">
+            <img src="images/corp.jpg" alt="Corporate Event GIF">
         </div>
     <div class="packages-content"> 
         <h2>Corporate Events Packages</h2>
@@ -94,7 +94,7 @@ session_start();
     <!-- KIDDIE -->
     <div class="packages-container">
         <div class="image-section">
-            <img src="image2.gif" alt="Kiddie Party and Baptism GIF">
+            <img src="images/corp1.png" alt="Kiddie Party and Baptism GIF">
         </div>
     <div class="packages-content">
         <h2>Kiddie Party and Baptism Packages</h2>
@@ -122,7 +122,7 @@ session_start();
     <!-- ADULT -->
     <div class="packages-container">
         <div class="image-section">
-            <img src="image3.gif" alt="Adult Birthday Party GIF">
+            <img src="images/corp2.png" alt="Adult Birthday Party GIF">
         </div>
     <div class="packages-content">
         <h2>Adult Birthday Party Packages</h2>
@@ -213,7 +213,7 @@ session_start();
     <!-- DEBUT -->
     <div class="packages-container">
         <div class="image-section">
-            <img src="image4.gif" alt="Debut GIF">
+            <img src="images/corp3.png" alt="Debut GIF">
         </div>
     <div class="packages-content">
         <h2>Debut Packages</h2>
@@ -304,7 +304,7 @@ session_start();
     <!-- CIVIL WEDDING -->
     <div class="packages-container">
         <div class="image-section">
-            <img src="image5.gif" alt="Civil Wedding GIF">
+            <img src="images/Civ1.png" alt="Civil Wedding GIF">
         </div>
     <div class="packages-content">
         <h2>Civil Wedding Packages</h2>
@@ -395,7 +395,7 @@ session_start();
     <!-- WEDDING -->
     <div class="packages-container">
         <div class="image-section">
-            <img src="image6.gif" alt="Wedding GIF">
+            <img src="images/Civ2.png" alt="Wedding GIF">
         </div>
     <div class="packages-content">
         <h2>Wedding Packages</h2>
@@ -521,5 +521,45 @@ session_start();
         </div>
     </div>
     </div>
+
+    <!---------- Footer --------------->
+  <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>DEVELOPERS</h3>
+            <p>Arceta, Emmanuel <br> Perlas, John Rovick <br> Bedaño, Vanessa Anne <br> Ramos, John Patrick</p>
+            <div class="app-logo">
+            </div>
+          </div>
+          <div class="footer-col-2">
+          </div>
+          <div class="footer-col-3">
+          </div>
+          <div class="footer-col-3">
+          </div>
+        </div>
+        <hr>
+        <p class="copyright">WEB AND MOBILE SYSTEMS</p>
+      </div>
+    </div>
+
+
+    <!-- BURGER NAV RESPONSIVENESS -->
+    <script>
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
+
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
+    }
+  });
+</script>
 </body>
 </html>

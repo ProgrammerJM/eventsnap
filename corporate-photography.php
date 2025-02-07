@@ -68,7 +68,7 @@ session_start(); // Start the session to check login status
           <a href="<?php echo (isset($_SESSION['user_id'])) ? 'booking.php' : 'login.php'; ?>" class="btn-packages">Book Us</a>
         </div>
         <div class="image-section">
-            <img src="image.gif" alt="Photobooth GIF">
+        <img src="images/eventcoverage1.png" alt="Events Coverage">
         </div>
     </div>
   </div>

@@ -55,10 +55,9 @@ $inquiries_result = $inquiries_stmt->get_result();
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <style>
+  <!-- <style>
     .dashboard-container {
-      max-width: 1200px;
-      margin: 50px auto;
+      width: 100%;
       padding: 20px;
       background: #f9f9f9;
       border-radius: 10px;
@@ -99,7 +98,7 @@ $inquiries_result = $inquiries_stmt->get_result();
       background-color: #e9ecef;
       border-radius: 5px;
     }
-  </style>
+  </style> -->
 </head>
 <body>
   <div class="container">
