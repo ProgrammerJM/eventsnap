@@ -51,7 +51,7 @@ session_start();
           <?php } ?>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()"/>
     </div>
   </div>
 
@@ -197,12 +197,16 @@ If you need to reschedule, please contact us at least 14 days in advance, and we
                 </div>
             </div>
         </section>
+    </div>
+    
+<!-- <!end---------->
 
-<!end---------->
+
+
 
 <!-- Contact Form Area start -->
 <section class="contact-form-area py-70 rel z-1">
-            <div class="container">
+            <div class="container contact-container">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <div class="comment-form bgc-lighter z-1 rel mb-30 rmb-55">
@@ -259,6 +263,9 @@ If you need to reschedule, please contact us at least 14 days in advance, and we
                             </form>
                         </div>
                     </div>
+          </div>
+    </div>
+</div>
                     
         <!-- Contact Form Area end -->
 
@@ -284,25 +291,23 @@ If you need to reschedule, please contact us at least 14 days in advance, and we
       </div>
     </div>
 
-    <!-------toggle----------->
+     <!-------toggle----------->
 
-    <script>
-      var MenuItems = document.getElementById("MenuItems");
+     <script>
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
 
-      MenuItems.style.maxHeight = "0px";
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
 
-      function menutoggle(){
-        if(MenuItems.style.maxHeight=="0px")
-          {
-            MenuItems.style.maxHeight = "200px";
-          }
-        else
-          {
-            MenuItems.style.maxHeight = "0px";
-          }
-      }
-    </script>
-
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
+    }
+  });
+</script>
 
 </body>
 </html>

@@ -20,7 +20,9 @@ session_start();
   <div class="container">
     <div class="navbar">
       <div class="logo">
-        <img src="images/log.png" width="300px">
+        <a href="index.php">
+          <img src="images/log.png" class="logo-img">
+        </a>
       </div>
       <nav>
         <ul id="MenuItems">
@@ -38,6 +40,7 @@ session_start();
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="faq.php">FAQ's</a></li>
           <li><a href="contact.php">Contact Us</a></li>
+          
           <!-- Dynamic Login/Register or Account Dropdown -->
           <?php if (isset($_SESSION['user_id'])) { ?>
             <li class="dropdown">
@@ -52,13 +55,13 @@ session_start();
           <?php } ?>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()"/>
     </div>
 
-    <div class="row">
+    <div class="hero-container">
       <div class="col-2">
-        <h1>Transforming memories into everlasting masterpieces</h1>
-        <p>"Preserving Moments, Creating Timeless Art"</p>
+        <h1 class="hero-title">Transforming memories into everlasting masterpieces</h1>
+        <p class="hero-tagline">"Preserving Moments, Creating Timeless Art"</p>
       </div>
 
       <div class="col-2">
@@ -69,9 +72,9 @@ session_start();
 </div>
 
 <!----------------------->
-<div class="categories">
+<div class="categories  p-xl-5">
     <div class="small-container">
-      <div class="row">
+      <div class="row arts">
         <div class="col-3">
           <img src="images/category-1.png.png">
         </div>
@@ -115,6 +118,7 @@ session_start();
     </div>
   </div>
 
+<!---------- Footer --------------->
     <div class="footer">
       <div class="container">
         <div class="row">
@@ -137,23 +141,20 @@ session_start();
     </div>
 
     <!-------toggle----------->
-
     <script>
-      var MenuItems = document.getElementById("MenuItems");
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
 
-      MenuItems.style.maxHeight = "0px";
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
 
-      function menutoggle(){
-        if(MenuItems.style.maxHeight=="0px")
-          {
-            MenuItems.style.maxHeight = "200px";
-          }
-        else
-          {
-            MenuItems.style.maxHeight = "0px";
-          }
-      }
-    </script>
-
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
+    }
+  });
+</script>
 </body>
 </html>

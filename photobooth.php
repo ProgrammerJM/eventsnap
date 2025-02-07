@@ -51,7 +51,7 @@ session_start(); // Start the session to check login status
           <?php } ?>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()">
     </div>
   </div>
 
@@ -76,20 +76,45 @@ session_start(); // Start the session to check login status
     <div class="image-section">
         <img src="image.gif" alt="Photobooth GIF">
     </div>
+  </div>
 
-  <script>
-    // Toggle menu for mobile view
-    var MenuItems = document.getElementById("MenuItems");
-    MenuItems.style.maxHeight = "0px";
+          <!---------- Footer --------------->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>DEVELOPERS</h3>
+            <p>Arceta, Emmanuel <br> Perlas, John Rovick <br> Bedaño, Vanessa Anne <br> Ramos, John Patrick</p>
+            <div class="app-logo">
+            </div>
+          </div>
+          <div class="footer-col-2">
+          </div>
+          <div class="footer-col-3">
+          </div>
+          <div class="footer-col-3">
+          </div>
+        </div>
+        <hr>
+        <p class="copyright">WEB AND MOBILE SYSTEMS</p>
+      </div>
+    </div>
 
-    function menutoggle() {
-      if (MenuItems.style.maxHeight == "0px") {
-        MenuItems.style.maxHeight = "200px";
-      } else {
-        MenuItems.style.maxHeight = "0px";
-      }
+    <script>
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
+
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
     }
-  </script>
+  });
+</script>
 
 </body>
 </html>

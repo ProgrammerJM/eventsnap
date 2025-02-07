@@ -51,14 +51,14 @@ session_start();
           <?php } ?>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()"/>
     </div>
   </div>
 
   
 
   </div>
-  <div class="small-container">
+  <div class="small-container aboutus-title">
   <h2 class="title">Web Developers</h2>
 </div>
 
@@ -160,24 +160,24 @@ session_start();
       </div>
     </div>
 
-    <!-------toggle----------->
+   <!-------toggle----------->
 
-    <script>
-      var MenuItems = document.getElementById("MenuItems");
+   <script>
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
 
-      MenuItems.style.maxHeight = "0px";
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
 
-      function menutoggle(){
-        if(MenuItems.style.maxHeight=="0px")
-          {
-            MenuItems.style.maxHeight = "200px";
-          }
-        else
-          {
-            MenuItems.style.maxHeight = "0px";
-          }
-      }
-    </script>
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
+    }
+  });
+</script>
+
 
 
 </body>

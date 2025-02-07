@@ -51,7 +51,7 @@ session_start();
           <?php } ?>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()"/>
     </div>
   </div>
       
@@ -80,12 +80,53 @@ session_start();
               <button class="contact-button">Message Us</button>
             </a>            
             <div class="socials">
-              <a href="https://www.facebook.com/eventsnapps" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
-              <a href="https://www.facebook.com/eventsnapps" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+              <a href="https://www.facebook.com/eventsnapps" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+              <a href="https://www.facebook.com/eventsnapps" target="_blank"><img src="images/facebook-icon.png" alt="Facebook"></a>
           </div>
         </div>
-
       </div>
+
+      <!---------- Footer --------------->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>DEVELOPERS</h3>
+            <p>Arceta, Emmanuel <br> Perlas, John Rovick <br> Bedaño, Vanessa Anne <br> Ramos, John Patrick</p>
+            <div class="app-logo">
+            </div>
+          </div>
+          <div class="footer-col-2">
+          </div>
+          <div class="footer-col-3">
+          </div>
+          <div class="footer-col-3">
+          </div>
+        </div>
+        <hr>
+        <p class="copyright">WEB AND MOBILE SYSTEMS</p>
+      </div>
+    </div>
+      
+
+       <!-------toggle----------->
+
+       <script>
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
+
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
+    }
+  });
+</script>
+
     </body>
 </html>
 

@@ -19,7 +19,7 @@ session_start();
   <div class="container">
     <div class="navbar">
       <div class="logo">
-        <img src="images/log.png" width="125px">
+        <img src="images/log.png" class="logo-img" alt="EventSnap Logo">
       </div>
       <nav>
         <ul id="MenuItems">
@@ -51,7 +51,7 @@ session_start();
           <?php } ?>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()" />
     </div>
   </div>
 
@@ -94,6 +94,47 @@ session_start();
         </a>
       </div>
     </div>
+
+    <!-------toggle----------->
+
+    <script>
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
+
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
+    }
+  });
+</script>
+
+
   </div>
+  <!---------- Footer --------------->
+  <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>DEVELOPERS</h3>
+            <p>Arceta, Emmanuel <br> Perlas, John Rovick <br> Bedaño, Vanessa Anne <br> Ramos, John Patrick</p>
+            <div class="app-logo">
+            </div>
+          </div>
+          <div class="footer-col-2">
+          </div>
+          <div class="footer-col-3">
+          </div>
+          <div class="footer-col-3">
+          </div>
+        </div>
+        <hr>
+        <p class="copyright">WEB AND MOBILE SYSTEMS</p>
+      </div>
+    </div>
 </body>
 </html>
