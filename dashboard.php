@@ -135,7 +135,7 @@ $inquiries_result = $inquiries_stmt->get_result();
           <?php } ?>
         </ul>
       </nav>
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      <img src="images/menu.png" class="menu-icon" id="menuButton" onclick="menutoggle()">
     </div>
   </div>
 
@@ -226,6 +226,23 @@ $inquiries_result = $inquiries_stmt->get_result();
       <p>No inquiries found.</p>
     <?php } ?>
   </div>
+
+  <!-- BURGER MENU -->
+  <script>
+  var menu = document.getElementById("MenuItems"); // The dropdown menu
+  var menuButton = document.getElementById("menuButton"); // The hamburger button
+
+  function menutoggle() {
+    menu.classList.toggle("show"); // Toggle the menu visibility
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (menu.classList.contains("show") && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.remove("show"); // Hide the menu
+    }
+  });
+</script>
 </body>
 </html>
 
